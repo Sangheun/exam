@@ -7,7 +7,6 @@ class Category(models.Model):
 
 
 class Shop(models.Model):
-
     name = models.CharField(max_length=100)
     phonenumber = models.CharField(max_length=15)
     address = models.CharField(max_length=100)
