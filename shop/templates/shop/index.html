@@ -1,13 +1,23 @@
-<ul>
-    {% for category in category_list %}
-        <li>
-            <a href="">
-            {{category.title}}
-            </a>
-        </li>
-    {% endfor %}
-</ul>
-<hr />
-<a href="">
+{% extends 'shop/base.html' %}
+
+
+{% block content %}
+
+
+      <div class="row">
+
+        {% for category in category_list %}
+        <div class="col-lg-4">
+          <img class="img-circle" src="{{ post.photo.url }}" width="140" height="140">
+          <p><a href="{% url 'shop:category_detail' category.pk %}" >{{category.title}}</a></p>
+        </div><!-- /.col-lg-4 -->
+        {% endfor %}
+
+      </div><!-- /.row -->
+
+    <a href="">
     카테고리 생성하기
-</a>
+    </a>
+
+
+{% endblock %}
