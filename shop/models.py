@@ -5,17 +5,21 @@ class Category(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-class Shop(models.Model):
-# # 가게명 필드
-#     title = models.CharField(max_length=100)
-#     phonenumber = CharField(max_length=100)
-#     address = models.CharField()
-#     explain = models.TextField()
-#     photo = models.ImageField()
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     updated_at = models.DateTimeField(auto_now=True)
 
-    pass
+class Shop(models.Model):
+
+    name = models.CharField(max_length=100)
+    phonenumber = models.CharField(max_length=15)
+    address = models.CharField(max_length=100)
+    explain = models.TextField()
+    photo = models.ImageField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+
 
 class Review(models.Model):
 # 관련 Shop
